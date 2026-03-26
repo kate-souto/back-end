@@ -1,0 +1,54 @@
+create table cliente
+(   cpf_ou_cnpj char(14) not null (ehcnpjvalido(cpf_ou_cnpj)) or (ehcpfvalido(cpf_ou_cnpj, 1, 11)),
+    nome varchar(100) not null,
+    telefone char(9),
+    logradouro varchar(100),
+    numero varchar(5),
+    bairro varchar(100),
+    cep char(8),
+    cidade varchar(50),
+    uf char(2),
+    pais char(2),
+    primary key (cpf_ou_cnpj)
+);
+    
+create table reserva
+(   codigo integer not null,
+    inicio date char(10) not null,
+    fim date char(10) not null,
+    
+);
+
+create table tipo
+(   codigo interger not null,
+    nome varchar(50) not null check (nome - '(casal|solteiro|tripo) (stander|master|exclusive)',
+    valor real not null check ( valor>0),
+    primary key (codigo)
+);
+
+create table quarto
+(   codigo integer not null,
+    andar integer varchar(2) not null check(andar>0),
+    quarto integer char(3) not null check (quarto>0),
+    camasolteiro integer char(1),
+    camacasal integer char(1),
+    tipo integer not null,
+    (codigo == andar*100+quarto),
+    check (camasolteiro+camacasal > 0),
+    primary key (codigo),
+    foreign key (tipo) references tipo(codigo)
+);
+
+create table hospedagem
+(   codigo integer not null,
+    entrada date char(10) not null,
+    saida date char(10),
+    qtddpessoas integer char(1) not null,
+    quarto integer not null,
+    cliente char(14) not null,
+    primary key (codigo),
+    foreign key (cliente) references cliente(cpf_ou_cnpj)
+);
+
+
+

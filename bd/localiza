@@ -1,0 +1,71 @@
+clientes {
+    nome,
+    cpf_ou_cnpj,
+    data_nascimento,
+    genero
+}
+
+motoristas {
+    cliente,
+    cnh
+}
+    
+carros {
+    placa,
+    modelo,
+    ano,
+    cor,
+    câmbio,
+    ar_condicionado,
+    portas,
+    combustivel,
+    capacidade_passageiros,
+    motor,
+    freio,
+    vidro_e_trava,
+    valor_diaria,
+    km,
+    tanque,
+    condições
+}
+    
+alugueis {
+    cliente,
+    carro(placa),
+    data_hora_retirada,
+    local_retirada,
+    data_hora_entrega,
+    local_entrega,
+    motoristas,
+    seguro
+}
+
+entrega {
+    km_entregue,
+    tanque_entregue,
+    pagamento,
+    condições
+}
+
+seguro {
+    basico,
+    intermediario,
+    completo
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

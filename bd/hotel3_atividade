@@ -1,0 +1,9 @@
+1) Mostrar o ranking das UFs que tiveram mais de 3 hospedagens no mês passado.
+
+2) Mostrar o ranking da quantidade de hospedagens por tipo de quarto por UF do cliente no mês passado.
+
+3) Mostrar a duração média das hospedagens por tipo de quarto no mês passado.
+
+4) Mostrar o ranking das regiões que tiveram mais de 5 reservas no mês passado. Considere as regiões norte, nordeste, centro-oeste, sudeste e sul.
+
+5) Mostrar os clientes cujas reservas não viraram hospedagens em um dado intervalo de datas. Utilize 11/11/1111 para a data inicial e 22/22/2222 para a data final do intervalo.

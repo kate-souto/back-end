@@ -1,0 +1,2 @@
+para usar o overlaps tem que usar +1 na segunda data, de ambos finais
+(start1, end1+1) overlaps (start2, end2 +1)

@@ -1,0 +1,3 @@
+o WHERE filtra as linhas nates do group by
+o HAVING filtra as linhas do resltado do group by
+

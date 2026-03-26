@@ -1,0 +1,49 @@
+pizza com gorgonzola e cogumelo
+
+select sabor.nome
+from saboringrediente
+    join ingrediente on saboringrediente.ingrediente = ingrediente.codigo
+    join sabor on saboringrediente.sabor = sabor.codigo
+where (ingrediente.nome = " GORGONZOLA') or (ingrediente.nome = "COGUMELO")
+group by sabor.codigo
+having count(*) = 2;
+
+
+AUTO JOIN
+
+select sabor.nome
+from saboringrediente as si1
+    join ingrediente as i1 on si1.ingrediente = i1.codigo
+    join saboringrediente as si2 on si1.sabor = si2.sabor
+    join ingrediente as i2 on si2.ingrediente = i2.codigo
+    join sabor on si1.sabor = sabor.codigo
+where (i1.nome = "GORGONZOLA") and (i2.nome = "COGUMELO");
+
+
+
+comandas do mês passado
+
+select * 
+from comanda 
+    join pizza on pizza.comanda = comanda.numero
+    join pizzasabor on pizzasabor.pizza = pizza.codigo
+    join sabor on pizza.sabor = sabor.codigo
+    join tipo on sabor.tipo = tipo.sabor
+where date_trunc('month, data) = date_trunc('month', current_date - cast('1 month' as intervalo)) and tipo.nome like "%doce%"
+group by sabor.codigo
+having count(*) > 40;
+
+
+INGREDIENTES MAIS PEDIDOS NOS ULTIMOS 12 MESES
+
+select * 
+from comanda
+     join pizza on pizza.comanda = comanda.numero
+     join pizzasabor on pizzasabor.pizza = pizza.codigo
+     join sabor on saborpizza.sabor = sabor.codigo
+     join saboringrediente on saboringrediente.sabor = sabor.codigo
+     join ingrediente on saboringrediente.ingrediente = ingrediente.codigo
+     join tipo on sabor.tipo = tipo.codigo
+where data between date_trunc('month', current_date - cast('12 month' as intervalo)) and date_trunc('month', current_date)-cast('1 day' as interval) and tipo.nome like "%doce%"
+group by ingrediente.codigo
+order by 2 desc

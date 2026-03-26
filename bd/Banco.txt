@@ -1,0 +1,14 @@
+BANCO DE DADOS 
+
+*Texto é definido com aspas simples (')
+
+*Não vamos usar multivalorados
+ Multivalorado é quando não é importante, porque é ruim usar string em banco
+ 
+ *Para definir a cardialidade deve-se começar sempre a frase com "um"
+ 
+*Sempre que é 1:N
+ PK no lado 1
+ FK no lado N
+ 
+ *Informação é tudo aquilo que eu consigo extrair dos dados
