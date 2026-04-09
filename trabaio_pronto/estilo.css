@@ -1,0 +1,28 @@
+
+
+
+a{
+    background-color: rgb(228, 255, 226);
+    font-size: medium;
+    border-radius: 8px;
+    border-style: solid;
+    padding: 5px;
+    font-style: normal;
+    color: black;
+    text-decoration: none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+a:hover{
+    background-color: rgb(101, 155, 101);
+}
+
+.submit:hover{
+    background-color:  rgb(101, 155, 101);
+}
+
+.submit{
+    border-radius: 8px;
+    background-color: rgb(228, 255, 226);;
+}
